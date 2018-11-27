@@ -43,6 +43,22 @@ criteria = criterios(X,fX);
 
 save multicriteriaSolutions X fX
 
+% Generate criteria's weight using AHP
+% pesos = 
+
+% Sort solutions using ELECTRE I
+preferencia = {'min','min','min','min','min'};
+[ X_ele, fX_ele ] = electre(X, fX, pesos, preferencia )
+
+% Sort solutions using PROMETHEE II
+%promethee aqui
+
+% Compare results between ELECTRE I and PROMETHEE II
+%escolhe a "N" alternativas melhores obtidas por cada método
+%plota um grafico para cada criterio comparando as "N" alternativas no
+%elec. e prom.
+
+end
 
 
 
