@@ -1,4 +1,4 @@
-function [ X, fX ] = electre(X, fX, pesos, preferencia )
+function [ X, fX, ranking] = electre(X, fX, pesos, preferencia )
 %	electre: ordena as alternativas da melhor para a pior.
 %   X: alternativas;
 %   fX: avaliações das alternativasc(colunas) nos critérios (linhas);

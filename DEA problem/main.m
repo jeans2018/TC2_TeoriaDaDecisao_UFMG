@@ -48,7 +48,7 @@ save multicriteriaSolutions X fX
 
 % Sort solutions using ELECTRE I
 preferencia = {'min','min','min','min','min'};
-[ X_ele, fX_ele ] = electre(X, fX, pesos, preferencia )
+[ X_ele, fX_ele, ranking ] = electre(X, fX, pesos, preferencia )
 
 % Sort solutions using PROMETHEE II
 %promethee aqui
