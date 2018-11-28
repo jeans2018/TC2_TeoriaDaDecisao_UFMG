@@ -1,6 +1,8 @@
 
-function main()
-
+% function main()
+clear all
+close all
+clc
 % Initialization
 N  = 10; % number of solutions
 n  = 6;  % number of decision variables
@@ -43,12 +45,14 @@ criteria = criterios(X,fX);
 
 save multicriteriaSolutions X fX
 
-% Generate criteria's weight using AHP
-% pesos = 
+% Generate criteria priorities using AHP
+Criteria_Weights = [1 3 5 7 9; 1/3 1 3 5 5; 1/5 1/3 1 3 5; ...
+    1/7 1/5 1/3 1 3; 1/9 1/5 1/5 1/3 1];
+[Criteria_Priorities, W_approx, IC, ICA, CR] = ahp(Criteria_Weights);
 
 % Sort solutions using ELECTRE I
 preferencia = {'min','min','min','min','min'};
-[ X_ele, fX_ele, ranking ] = electre(X, fX, pesos, preferencia )
+[ X_ele, fX_ele, ranking ] = electre(X, fX, Criteria_Priorities, preferencia )
 
 % Sort solutions using PROMETHEE II
 %promethee aqui
@@ -58,7 +62,6 @@ preferencia = {'min','min','min','min','min'};
 %plota um grafico para cada criterio comparando as "N" alternativas no
 %elec. e prom.
 
-end
 
 
 
