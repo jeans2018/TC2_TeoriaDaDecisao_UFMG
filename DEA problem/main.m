@@ -1,8 +1,8 @@
 
 % function main()
-clear all
-close all
-clc
+clear all;
+close all;
+clc;
 % Initialization
 N  = 10; % number of solutions
 n  = 6;  % number of decision variables
@@ -59,14 +59,15 @@ preferencia = {'min','min','min','min','min'};
 [ X_prom, fX_prom, ranking_prom,norm_fx]= Promethee_II(X, fX, criteria,  Criteria_Priorities, preferencia);
 % Compare results between ELECTRE I and PROMETHEE II
 c = categorical({'Electre','Promethee'});
+labels = {'Custo','Emissão','Perdas de energia','Variação do custo','Variação da emissão'};
 for i=1:5
 figure
 b = bar(c, [fX_ele(i,1) fX_prom(i,1)],'FaceColor','flat');
 b.CData(1,:) = [0 0.8 0.8];
 b.CData(2,:) = [1 1 0];
+title(labels{i});
 end
 figure
-labels = {'Custo','Emissão','Perdas de energia','Variação do custo','Variação da emissão'};
 pie(norm_fx(:,ranking_ele(1)),labels);
 title('Grafico de Pizza para ELECTRE I');
 
