@@ -1,4 +1,4 @@
-function [ X, fX, ranking,tab] = Promethee_II(X, fX,tabela, pesoCriterios,preferencia)
+function [ X, fX, ranking] = Promethee_II(X, fX,tabela, pesoCriterios,preferencia)
 %%
 % load('multicriteriaSolutions');
 % tabela = criterios(X,fX);
@@ -40,7 +40,6 @@ end
 ranking = flip(ord_index);
 X = X(:,ranking);
 fX = fX(:,ranking);
-tab = tab/max(max(tabela));
 %%
 
 

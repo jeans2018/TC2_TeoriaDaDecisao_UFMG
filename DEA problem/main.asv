@@ -76,15 +76,14 @@ title('Grafico de Pizza para PROMETHEE II');
 %escolhe a "N" alternativas melhores obtidas por cada método
 %plota um grafico para cada criterio comparando as "N" alternativas no
 %elec. e prom.
-
-figure
 Custo = [fX_ele(1,1); fX_prom(1,1)];
 Emissao = [fX_ele(2,1); fX_prom(2,1)];
 Perdas = [fX_ele(3,1); fX_prom(3,1)];
 Variacao_custo = [fX_ele(4,1); fX_prom(4,1)];
 Variacao_emissao = [fX_ele(4,1); fX_prom(4,1)];
-LastName = {'ELECTRE I';'PROMETHEE II'};
-T = table(Custo,Emissao,Perdas ,Variacao_custo,Variacao_emissao,'RowNames',LastName);
-uitable('Data',T{:,:},'ColumnName',T.Properties.VariableNames,...
-    'RowName',T.Properties.RowNames,'Units', 'Normalized', 'Position',[0, 0, 1, 1]);
+LastName = {'Smith';'PROMETHEE II';};
+T = table(Custo,Emissao,Perdas ,Variacao_custo,Variacao_emissao,'RowNames',);
+
+
+
 
