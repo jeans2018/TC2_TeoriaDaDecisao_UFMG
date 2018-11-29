@@ -1,9 +1,9 @@
-function [ X, fX, ranking,tab] = Promethee_II(X, fX,tabela, pesoCriterios,preferencia)
+function [ X, fX, ranking,tab] = Promethee_II(X, fX, pesoCriterios,preferencia)
 %%
 % load('multicriteriaSolutions');
-% tabela = criterios(X,fX);
+% fX = criterios(X,fX);
 % pesoCriterios = [0.5148;0.2517;0.1321;0.0649;0.0364];
-Ns = length(tabela); %number of solutions
+Ns = length(fX); %number of solutions
 ind = 1:5;
 
 %%
@@ -11,13 +11,13 @@ ind = 1:5;
 tab = zeros(5,Ns);
 for i=1:5
     if preferencia{i} == 'min'
-        tab(i,:) = abs((tabela(i,:) - max(tabela(i,:)))/abs((min(tabela(i,:)) - max(tabela(i,:)))));
+        tab(i,:) = abs((fX(i,:) - max(fX(i,:)))/abs((min(fX(i,:)) - max(fX(i,:)))));
     else
-        tab(i,:) = (tabela(i,:) - min(tabela(i,:))/(max(tabela(i,:)) - min(tabela(i,:))));
+        tab(i,:) = (fX(i,:) - min(fX(i,:))/(max(fX(i,:)) - min(fX(i,:))));
     end
 end
 
-tab = tab*max(max(tabela));
+tab = tab*max(max(fX));
 %%
 
 J_plus = cell(Ns);
@@ -40,7 +40,7 @@ end
 ranking = flip(ord_index);
 X = X(:,ranking);
 fX = fX(:,ranking);
-tab = tab/max(max(tabela));
+tab = tab/max(max(fX));
 %%
 
 

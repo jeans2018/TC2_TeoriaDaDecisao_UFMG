@@ -55,8 +55,8 @@ preferencia = {'min','min','min','min','min'};
 [ X_ele, fX_ele, ranking_ele ] = electre(X, fX, Criteria_Priorities, preferencia );
 
 % Sort solutions using PROMETHEE II
-%promethee aqui
-[ X_prom, fX_prom, ranking_prom,norm_fx]= Promethee_II(X, fX, criteria,  Criteria_Priorities, preferencia);
+[ X_prom, fX_prom, ranking_prom,norm_fx]= Promethee_II(X, fX,  Criteria_Priorities, preferencia);
+
 % Compare results between ELECTRE I and PROMETHEE II
 c = categorical({'Electre','Promethee'});
 labels = {'Custo','Emissão','Perdas de energia','Variação do custo','Variação da emissão'};
