@@ -79,13 +79,14 @@ title('Grafico de Pizza para PROMETHEE II');
 %elec. e prom.
 
 figure
-Custo = [fX_ele(1,1); fX_prom(1,1)];
-Emissao = [fX_ele(2,1); fX_prom(2,1)];
-Perdas = [fX_ele(3,1); fX_prom(3,1)];
-Variacao_custo = [fX_ele(4,1); fX_prom(4,1)];
-Variacao_emissao = [fX_ele(4,1); fX_prom(4,1)];
-LastName = {'ELECTRE I';'PROMETHEE II'};
-T = table(Custo,Emissao,Perdas ,Variacao_custo,Variacao_emissao,'RowNames',LastName);
-uitable('Data',T{:,:},'ColumnName',T.Properties.VariableNames,...
-    'RowName',T.Properties.RowNames,'Units', 'Normalized', 'Position',[0, 0, 1, 1]);
+plot3(fX(1,:),fX(2,:),fX(3,:),'k.')
+hold on
+plot3(fX_ele(1,1:10),fX_ele(2,1:10),fX_ele(3,1:10),'bd')
+plot3(fX_prom(1,1:10),fX_prom(2,1:10),fX_prom(3,1:10),'ro')
 
+grid on
+xlabel('Custo')
+ylabel('Emissão')
+zlabel('Perda energia')
+title('Avaliação parcial')
+legend('Soluções','Melhor soluções electre','Melhores soluções Promethee');
