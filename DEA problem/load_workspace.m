@@ -94,7 +94,7 @@ title('Avaliação parcial das alternativas')
 ax = gca;
 ax.TitleFontSizeMultiplier = 1.5;
 set(gca,'FontSize',20)
-lgd = legend('Soluções','Location','Best');
+lgd = legend('Soluções','Melhor Solução Electre I','Melhor Solução Promethee II', 'Melhores Soluções Electre I','Melhores Soluções Promethee II','Location','Best');
 set(lgd,'FontSize',20);
 print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_eps\avaliacao_parcial_2D_cmark.eps'],'-depsc2','-r0');
 print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_png\avaliacao_parcial_2D_cmark.png'],'-dpng','-r0');
