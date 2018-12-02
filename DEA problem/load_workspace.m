@@ -57,7 +57,26 @@ print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_png\pizza_promethee.png'
 %plota um grafico para cada criterio comparando as "N" alternativas no
 %elec. e prom.
 
-%Gera Grafico 2D
+%Gera Grafico 2D sem marcadores 
+FigH = figure('Position', get(0, 'Screensize'));
+cont_fig = cont_fig + 1;
+plot(fX(1,:),fX(2,:),'k.','MarkerSize',18)
+hold on
+plot(fX_ele(1,1:10),fX_ele(2,1:10),'k.','MarkerSize',18)
+plot(fX_prom(1,1:10),fX_prom(2,1:10),'k.','MarkerSize',18)
+grid on
+xlabel('Custo')
+ylabel('Emissão')
+title('Avaliação parcial das alternativas')
+ax = gca;
+ax.TitleFontSizeMultiplier = 1.5;
+set(gca,'FontSize',20)
+lgd = legend('Soluções','Location','Best');
+set(lgd,'FontSize',20);
+print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_eps\avaliacao_parcial_2D.eps'],'-depsc2','-r0');
+print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_png\avaliacao_parcial_2D.png'],'-dpng','-r0');
+
+%Gera Grafico 2D com marcadores
 FigH = figure('Position', get(0, 'Screensize'));
 cont_fig = cont_fig + 1;
 plot(fX(1,:),fX(2,:),'k.','MarkerSize',18)
@@ -77,6 +96,7 @@ lgd = legend('Soluções','Location','Best');
 set(lgd,'FontSize',20);
 print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_eps\avaliacao_parcial_2D.eps'],'-depsc2','-r0');
 print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_png\avaliacao_parcial_2D.png'],'-dpng','-r0');
+
 
 %Gera Grafico 3D
 FigH = figure('Position', get(0, 'Screensize'));
