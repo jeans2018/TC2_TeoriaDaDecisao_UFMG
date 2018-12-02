@@ -73,8 +73,8 @@ ax.TitleFontSizeMultiplier = 1.5;
 set(gca,'FontSize',20)
 lgd = legend('Soluções','Location','Best');
 set(lgd,'FontSize',20);
-print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_eps\avaliacao_parcial_2D.eps'],'-depsc2','-r0');
-print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_png\avaliacao_parcial_2D.png'],'-dpng','-r0');
+print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_eps\avaliacao_parcial_2D_smark.eps'],'-depsc2','-r0');
+print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_png\avaliacao_parcial_2D_smark.png'],'-dpng','-r0');
 
 %Gera Grafico 2D com marcadores
 FigH = figure('Position', get(0, 'Screensize'));
@@ -94,8 +94,8 @@ ax.TitleFontSizeMultiplier = 1.5;
 set(gca,'FontSize',20)
 lgd = legend('Soluções','Location','Best');
 set(lgd,'FontSize',20);
-print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_eps\avaliacao_parcial_2D.eps'],'-depsc2','-r0');
-print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_png\avaliacao_parcial_2D.png'],'-dpng','-r0');
+print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_eps\avaliacao_parcial_2D_cmark.eps'],'-depsc2','-r0');
+print(figure(cont_fig),[pwd '\' 'LOG\' DirName '\images_png\avaliacao_parcial_2D_cmark.png'],'-dpng','-r0');
 
 
 %Gera Grafico 3D
