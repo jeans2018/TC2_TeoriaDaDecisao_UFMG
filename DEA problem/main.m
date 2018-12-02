@@ -71,6 +71,7 @@ figure
 pie(norm_fx(:,ranking_ele(1)),labels);
 title('Grafico de Pizza para ELECTRE I');
 
+
 figure
 pie(norm_fx(:,ranking_prom(1)),labels);
 title('Grafico de Pizza para PROMETHEE II');
@@ -78,15 +79,20 @@ title('Grafico de Pizza para PROMETHEE II');
 %plota um grafico para cada criterio comparando as "N" alternativas no
 %elec. e prom.
 
+%Gera Grafico 3D
 figure
-plot3(fX(1,:),fX(2,:),fX(3,:),'k.')
+plot3(fX(1,:),fX(2,:),fX(3,:),'k.','MarkerSize',18)
 hold on
-plot3(fX_ele(1,1:10),fX_ele(2,1:10),fX_ele(3,1:10),'bd')
-plot3(fX_prom(1,1:10),fX_prom(2,1:10),fX_prom(3,1:10),'ro')
+plot3(fX_ele(1,1:10),fX_ele(2,1:10),fX_ele(3,1:10),'bd','MarkerSize',18)
+plot3(fX_prom(1,1:10),fX_prom(2,1:10),fX_prom(3,1:10),'ro','MarkerSize',18)
 
 grid on
 xlabel('Custo')
 ylabel('Emissão')
 zlabel('Perda energia')
 title('Avaliação parcial')
-legend('Soluções','Melhor soluções electre','Melhores soluções Promethee');
+ax = gca;
+ax.TitleFontSizeMultiplier = 1.5;
+set(gca,'FontSize',20)
+lgd = legend('Soluções','Melhores Soluções Electre I','Melhores Soluções Promethee II','Location','Best');
+set(lgd,'FontSize',20);
